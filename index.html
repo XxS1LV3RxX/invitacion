@@ -50,6 +50,7 @@
             position: absolute;
             font-size: 18px;
             transition: left 0.3s ease, top 0.3s ease;
+            animation: mover 1s ease-in-out infinite; /* Animación añadida */
         }
 
         .imagen {
@@ -61,8 +62,8 @@
 
         .gif {
             display: none;
-            width: 600px;
-            margin-top: 600px;
+            width: 220px;
+            margin-top: 20px;
         }
 
         .music-btn {
@@ -94,6 +95,18 @@
             }
             to {
                 transform: scale(1.1);
+            }
+        }
+
+        @keyframes mover {
+            0% {
+                transform: translateY(0); /* posición inicial */
+            }
+            50% {
+                transform: translateY(-10px); /* se mueve hacia arriba */
+            }
+            100% {
+                transform: translateY(0); /* vuelve a la posición original */
             }
         }
 
@@ -136,8 +149,8 @@
 
             intentos++;
 
-            let x = Math.random() * (window.innerWidth / 2 - 10000); 
-            let y = Math.random() * (window.innerHeight / 2 - 10000); 
+            let x = Math.random() * (window.innerWidth / 2 - 300); 
+            let y = Math.random() * (window.innerHeight / 2 - 300); 
             boton.style.left = x + "px";
             boton.style.top = y + "px";
         }
